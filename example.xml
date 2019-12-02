@@ -1,6 +1,35 @@
-<note> 
-  <to err='hello'>Tove</to> 
-  <from>Jani</from> 
-  <heading>Reminder</heading> 
-  <body>Don't forget me this weekend!</body> 
-</note>
+<DSS>
+  <DS>
+    <E ID="HARD-CODE.ABC"><Q>abc</Q><D>STD_DSC</D></E>
+  </DS>
+  <DS>
+    <ED ID="ANYTHING.HARD-CODE.ABC">
+      <N>ASDF</N>
+      <ERF LNKD="HARD-CODE.ABC">ERF_TEST</ERF>
+    </ED>
+  </DS>
+  <DS>
+      <ED ID="ANYTHING.HARD-CODE.ABC">
+          <N>ASDF</N>
+          <ERF LNKD="HARD-CODE.ABC">ERF_TEST</ERF>
+        </ED>
+  </DS>
+  <DS>
+      <ED ID="ANYTHING.HARD-CODE.ABC">
+          <N>ASDF</N>
+          <ERF LNKD="HARD-CODE.ABC">ERF_TEST</ERF>
+        </ED>
+  </DS>
+  <DS>
+      <ED ID="ANYTHING.HARD-CODE.ABC">
+          <N>ASDF</N>
+          <ERF LNKD="HARD-CO2DE.ABC">ERF_TEST</ERF>
+        </ED>
+  </DS>
+  <DS>
+      <ED ID="ANYTHING.HARD-CODE.ABC">
+          <N>ASDF</N>
+          <ERF LNKD="HARD-CODE.ABCs">ERF_TEST</ERF>
+        </ED>
+  </DS>
+</DSS>

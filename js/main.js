@@ -10,17 +10,27 @@ $(document).ready(() => {
     if(file.type !== 'text/xml') {
       alert('please chose an XML file only!');
     } else {
-      file.text().then(x => download('file.xml', getFileData(x)));
+      file.text().then(x => download('file.xml', processFileData(x)));
     }
 
   });
 });
 
 
-let getFileData = xmlAsString => {
+let processFileData = (xmlAsString) => {
+  const code = `HARD-CODE.${$('#errorCode').val()}`;
   let parsedXml = $.parseXML(xmlAsString);
-  let $xml = $(parsedXml);  
-  return $xml.find('note')[0].outerHTML;
+  let text = '';
+  let $xml = $(parsedXml);
+  let allDs = $xml.find('DS').toArray();
+
+
+  text = allDs.filter(ds => 
+    ($(ds).find('ERF')[0] && $(ds).find('ERF').attr('LNKD') == code)
+ || ($(ds).find('E')[0] && $(ds).find('E').attr('ID') == code)
+
+  ).map(ds => ds.outerHTML).join('\n');
+  return text;
 }
 
 const download =  (filename, text) => {
